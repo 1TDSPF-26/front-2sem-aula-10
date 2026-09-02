@@ -1,8 +1,34 @@
+import { useState } from "react"
 import imagem2 from "../../img/quadrado.png"
 
 export default function Conteudo(){
+    let numero = 0;
+
+    const [numeroState, setNumeroState] = useState(0);
+
+    function aumentaNumero(){
+        numero = numero + 1;
+        console.log(numero)
+    }
+
+    function aumentarUseState(){
+        setNumeroState((valorAtual)=> valorAtual + 1)
+        console.log(numeroState)
+    }
     return(
         <main>
+
+            <div>
+                <h2>exemplo variavel comum</h2>
+                <p>variavel comum: {numero}</p>
+                <button onClick={aumentaNumero}>aumenntar variavel comum</button>
+            </div>
+            <div>
+                <h2>exemplo de useState</h2>
+                <p>valor do state: {numeroState}</p>
+                <button onClick={aumentarUseState}>aumentar o valor do state</button>
+            </div>
+
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae rerum repudiandae itaque repellendus nisi, voluptates ex nihil, magnam iusto facere rem, nulla dolor laudantium aliquid? Dolores eveniet molestiae eligendi excepturi quis repellat fugit necessitatibus ipsa. Sapiente sunt soluta eveniet sequi inventore quos modi, quas rerum cum illo excepturi iste aspernatur.</p>
             <section>
                 <h2>Imagem com link externo</h2>
