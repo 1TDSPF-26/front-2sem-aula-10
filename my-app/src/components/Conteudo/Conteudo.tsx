@@ -56,7 +56,7 @@ export default function Conteudo() {
         </div>
 
         <div>
-            <h2>Usando o UseState para acender a lampâda</h2>
+            <h2>Usando o UseState para acender a lâmpada</h2>
             {lampadaState}
             <button onClick={acendeLampada} style={{margin : "2rem"}}>Acender lampada</button>
             <button onClick={apagaLampada}>Apagar lampada</button>
