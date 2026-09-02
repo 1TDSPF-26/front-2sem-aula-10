@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import Cabecalho from './components/Cabecalho/Cabecalho'
+import Conteudo from './components/Conteudo/Conteudo'
+import Rodape from './components/Rodape/Rodape'
 
 export default function App() {
   return (
-    <main>
-      <h1>Minha aplicação React</h1>
-    </main>
+    <div>
+      <Cabecalho />
+      <Conteudo />
+      <Rodape />
+    </div>
   )
 }
