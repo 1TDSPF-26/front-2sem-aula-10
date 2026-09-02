@@ -28,7 +28,7 @@ export default function Conteudo(){
                 </figure>
             </section>
             <section>
-                <h2>Imagem de referência intern estática</h2>
+                <h2>Imagem de referência interna estática</h2>
                 <figure>
                     <img src="/img/lampada.png" alt="Lãmpada desenhada." />
                     <figcaption>Imagem de exemplo estática - Lâmpada</figcaption>
