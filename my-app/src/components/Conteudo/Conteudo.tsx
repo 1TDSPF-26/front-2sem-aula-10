@@ -1,8 +1,43 @@
 import imgQuadrado from "../../image/quadrado.png";
+import { useState } from "react";
 
 export default function Conteudo() {
+
+    let numeroComum = 0;
+    //Estado do React
+    const [numeroState, setNumeroState] = useState(0);
+    
+    function aumentaVariavelComum(){
+        numeroComum = numeroComum + 1;
+        
+        //O valor muda e aparece no console 
+        console.log("Variavél comum: ", numeroComum)
+        //Mas, não aparecerá na página
+
+    }
+
+
+    function aumentarUseState(){
+        //O React altera o estado e renderiza novamente a página/componente.
+        setNumeroState((valorAtual) => valorAtual + 1)
+        console.log("Valor do estado: ", numeroState )
+    }
+
   return (
     <main>
+
+        <div>
+            <h2>Exemplo de váriavel comum</h2>
+            <p>Variavél Comum {numeroComum}</p>
+            <button onClick={aumentaVariavelComum}>Aumentar Variavél Comum</button>
+        </div>
+
+        <div>
+            <h2>Exemplo de Use State</h2>
+            <p>Valor do State: {numeroState}</p>
+            <button onClick={aumentarUseState}>Aumentar o valor do State</button>
+        </div>
+
         <section>
             <h2>Conteúdo</h2>
             <p>
