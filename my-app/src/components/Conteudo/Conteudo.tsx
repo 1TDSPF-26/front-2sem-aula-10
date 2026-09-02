@@ -1,5 +1,8 @@
 import imgQuadrado from "../../image/quadrado.png";
 import { useState } from "react";
+import lampadaAcessaImport from "../../image/lampada.png"
+import lampadaApagadaImport from "../../image/lampada-apagada.png"
+
 
 export default function Conteudo() {
 
@@ -23,6 +26,20 @@ export default function Conteudo() {
         console.log("Valor do estado: ", numeroState )
     }
 
+    let lampadaAcessa = <img src={lampadaAcessaImport} alt="Imagem de lâmpada acessa" style={{width: "50px"}}/>;
+    let lampadaApagada = <img src={lampadaApagadaImport} alt="Imagem de lâmpada apagada" style={{width: "50px"}} />;
+
+    const [lampadaState, setLampadaState] = useState(lampadaApagada);
+
+    function acendeLampada(){
+        setLampadaState(lampadaAcessa)
+    }
+
+    function apagaLampada(){
+        setLampadaState(lampadaApagada)
+    }
+    
+
   return (
     <main>
 
@@ -36,6 +53,13 @@ export default function Conteudo() {
             <h2>Exemplo de Use State</h2>
             <p>Valor do State: {numeroState}</p>
             <button onClick={aumentarUseState}>Aumentar o valor do State</button>
+        </div>
+
+        <div>
+            <h2>Usando o UseState para acender a lampâda</h2>
+            {lampadaState}
+            <button onClick={acendeLampada} style={{margin : "2rem"}}>Acender lampada</button>
+            <button onClick={apagaLampada}>Apagar lampada</button>
         </div>
 
         <section>
