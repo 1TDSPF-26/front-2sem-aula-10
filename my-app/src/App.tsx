@@ -4,10 +4,10 @@ import Rodape from './components/Rodape'
 
 export default function App() {
   return (
-    <>
-      <Cabecalho />
-      <Conteudo />
+    <div>
+      <Cabecalho/>
+      <Conteudo/>
       <Rodape />
-    </>
+    </div>
   )
 }
