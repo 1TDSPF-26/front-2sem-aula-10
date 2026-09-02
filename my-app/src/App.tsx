@@ -1,7 +1,15 @@
+import Cabecalho from './components/Cabecalho'
+import Conteudo from './components/Conteudo'
+import Rodape from './components/Rodape'
+
 export default function App() {
   return (
-    <main>
-      <h1>Minha aplicação React</h1>
-    </main>
+    <div>
+      <Cabecalho></Cabecalho>
+      <Conteudo></Conteudo>
+      <Rodape></Rodape>
+  
+
+    </div>
   )
 }
