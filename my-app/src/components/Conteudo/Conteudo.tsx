@@ -1,8 +1,42 @@
+import { useState } from "react";
 import imgQuadrado from "../../img/quadrado.png";
 
 export default function Conteudo(){
+
+    let numeroComum = 0;
+
+    //estado do React
+    const [numeroState, setNumeroState] = useState(0);
+
+    function aumentaVariavelComum(){
+        numeroComum = numeroComum + 1;
+
+        //O valor muda e aparece no console
+        console.log(`Váriavel comum: ${numeroComum}`);
+        //mas não aparecerá na página
+    }
+
+    function aumentarUseState(){
+        //o React altera o estado e renderiza a página/componente
+        setNumeroState((valorAtual) => valorAtual + 1);
+        console.log(`Valor do estado: ${numeroState}`);
+    }
+
+
     return(
         <main>
+
+            <div>
+                <h2>Exemplo de variável comum</h2>
+                <p>Variável comum: {numeroComum}</p>
+                <button onClick={aumentaVariavelComum}>Aumentar variável comum</button>
+            </div>
+
+            <div>
+                <h2>Exemplo de vvariável de UseState</h2>
+                <p>Valor do state: {numeroState}</p>
+                <button onClick={aumentarUseState}>Aumentar valor do state</button>
+            </div>
 
             <section>
                 <h2>Conteúdo</h2>
@@ -20,20 +54,26 @@ export default function Conteudo(){
                     <figcaption>Imagem utilizada para representar o conteúdo da aplicação 600x400.</figcaption>
                 </figure>
             </section>
+
             <section>
                 <h2>Imagem com referência local</h2>
+
                 <figure>
                     <img src={imgQuadrado} alt="Imagem quadrada de 400x400." />
                     <figcaption>Imagem de exemplo de 400x400</figcaption>
                 </figure>
             </section>
+
             <section>
                 <h2>Imagem de referência interna estática</h2>
+
                 <figure>
                     <img src="/img/lampada.png" alt="Lãmpada desenhada." />
                     <figcaption>Imagem de exemplo estática - Lâmpada</figcaption>
                 </figure>
             </section>
+
+
 
         </main>
     );
